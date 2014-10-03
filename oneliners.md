@@ -13,3 +13,6 @@
     
 - Push branch to Github
     git push --set-upstream origin feature/mybranch
+    
+- Dumb git configs
+    git config --list
