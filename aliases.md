@@ -3,6 +3,7 @@
 	  co = checkout
     ec = config --global -e
     update = !git pull --rebase --prune $@ && git submodule update --init --recursive
+    fullmerge = !git merge --no-ff $@
     cob = checkout -b
     cm = "!f() { git add -A | git commit -m \"$1\"; }; f"
     cmp = "!f() { git add -A | git commit -m \"$1\" | git push; }; f"
