@@ -26,3 +26,5 @@
 - Display a concise history of commits
     
     git log --graph --oneline --all --decorate
+    
+- Need more ideas
