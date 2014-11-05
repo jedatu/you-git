@@ -1,5 +1,6 @@
 ##Useful aliases
     lga = log --graph --oneline --all --decorate
+    pretty = log --graph --oneline --all --decorate
 	  co = checkout
     ec = config --global -e
     update = !git pull --rebase --prune $@ && git submodule update --init --recursive
