@@ -26,7 +26,14 @@
 - Display a concise history of commits
     
     git log --graph --oneline --all --decorate
-    
-- Need more ideas
 
-    Testing merge again
+- Reset Hard
+
+    git reset --hard origin/develop
+    git clean -f -d
+    
+- Display the reflog
+
+    git reflog
+    
+    
