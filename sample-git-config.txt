@@ -6,16 +6,16 @@
 [alias]
 	lga = log --graph --oneline --all --decorate
 	co = checkout
-  ec = config --global -e
-  update = !git pull --rebase --prune $@ && git submodule update --init --recursive
-  cob = checkout -b
-  cm = !git add -A && git commit -m
-  save = !git add -A && git commit -m 'SAVEPOINT'
-  undo = reset HEAD~1 --mixed
-  amend = commit -a --amend
-  wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
-  bclean = "!f() { git branch --merged ${1-develop} | grep -v " ${1-develop}$" | xargs -r git branch -d; }; f"
-  bdone = "!f() { git checkout ${1-develop} && git up && git bclean ${1-develop}; }; f"
+	ec = config --global -e
+	update = !git pull --rebase --prune $@ && git submodule update --init --recursive
+	cob = checkout -b
+	cm = !git add -A && git commit -m
+	save = !git add -A && git commit -m 'SAVEPOINT'
+	undo = reset HEAD~1 --mixed
+	amend = commit -a --amend
+	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+	bclean = "!f() { git branch --merged ${1-develop} | grep -v " ${1-develop}$" | xargs -r git branch -d; }; f"
+	bdone = "!f() { git checkout ${1-develop} && git up && git bclean ${1-develop}; }; f"
 [diff]
 	tool = diffmerge
 [difftool "diffmerge"]
