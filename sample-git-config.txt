@@ -21,11 +21,11 @@
 [merge]
 	tool = diffmerge
     keepBackup = false
-[difftool "diffmerge"]
-	cmd = E:/Applications/DiffMerge/DiffMerge.exe \"$LOCAL\" \"$REMOTE\"
 [mergetool "diffmerge"]
 	trustExitCode = true
 	cmd = E:/Applications/DiffMerge/DiffMerge.exe -merge -result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+[difftool "diffmerge"]
+	cmd = E:/Applications/DiffMerge/DiffMerge.exe \"$LOCAL\" \"$REMOTE\"
 [difftool "p4merge"]
 	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "\"$REMOTE\"" "\"$LOCAL\""
 [mergetool "p4merge"]
