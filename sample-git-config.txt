@@ -26,18 +26,13 @@
 [mergetool "diffmerge"]
 	trustExitCode = true
 	cmd = E:/Applications/DiffMerge/DiffMerge.exe -merge -result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
-[difftool "p4merge"]
-	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "\"$REMOTE\"" "\"$LOCAL\""
 [mergetool "p4merge"]
-	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "\"$PWD/$BASE\"" "\"$PWD/$REMOTE\"" "\"$PWD/$LOCAL\"" "\"$PWD/$MERGED\""
-	keepTemporaries = false
-	trustExitCode = false
-	keepBackup = false
-[mergetool "p4merge2"]
     cmd = /Applications/p4merge.app/Contents/MacOS/p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
-    keepTemporaries = false
     trustExitCode = false
-    keepBackup = false
-[difftool "p4merge2"]
+[difftool "p4merge"]
 	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge "$LOCAL" "$REMOTE"
+[mergetool]
+    keepTemporaries = false
+    keepBackup = false
+[difftool]
     prompt = false
