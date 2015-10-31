@@ -36,4 +36,24 @@
 ```bash
     git reflog
 ```
-    
+- Sync fork with upstream repository
+```bash
+    cd ~/Workspaces/GitHub
+    #clone the fork repo locally
+    git clone https://github.com/jedatu/upstream-repo-name.git upstream-repo-fork
+    cd upstream-repo-fork
+    #add the upstream repo
+    git remote add upstream https://github.com/UpstreamCorp/upstream-repo-name.git
+    git fetch 
+    git fetch upstream
+    #updating a develop branch
+    git checkout develop
+    git merge --no-ff upstream/develop
+    git commit –m “Updated develop with upstream”
+    git push
+    #updating a master branch
+    git checkout -b master origin/master
+    git merge --no-ff upstream/master
+    git commit –m “Updated master with upstream”
+    git push
+```
