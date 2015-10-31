@@ -19,7 +19,7 @@
 ```bash 
     git push --set-upstream origin feature/mybranch
 ```
-- Dumb git configs
+- Dump git configs
 ```bash 
     git config --list
 ```
