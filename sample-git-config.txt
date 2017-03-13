@@ -3,6 +3,10 @@
 	email = user@email.com
 [gui]
 	recentrepo = E:/Workspaces
+[pull]
+	rebase = true
+[color]
+	ui = true
 [alias]
 	lga = log --graph --oneline --all --decorate
 	co = checkout
@@ -16,6 +20,33 @@
 	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
 	bclean = "!f() { git branch --merged ${1-develop} | grep -v " ${1-develop}$" | xargs -r git branch -d; }; f"
 	bdone = "!f() { git checkout ${1-develop} && git up && git bclean ${1-develop}; }; f"
+	cp = cherry-pick
+	cl = clone
+	co = checkout
+        bl = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+	br = branch
+	ci = commit
+	sci = commit -S
+	st = status
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	lg = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+	oneoffs = "!git lg --no-merges --first-parent"
+	dlc = diff --cached HEAD^
+	f = "!git ls-files | grep -i"
+	r = reset
+	r1 = reset HEAD^
+	r2 = reset HEAD^^
+	rollback = reset --hard
+	rewind = reset HEAD^
+        reverse = reset HEAD^ --hard
+	stashes = stash list
+	sa = stash apply
+	ss = stash save
+        kill = "!git br -D $1 ; git push origin :$1"
+	ego = "!git log --no-merges --author=$USER --shortstat | awk '/^ [0-9]/ { f += $1; i += $4; d += $6 } END { printf(\"%d files changed, %d insertions(+), %d deletions(-)\", f, i, d) }'"
+	setamwayuser = config user.email user@email.com
+        setmyuser = config user.email user@email.com
 [diff]
 	tool = diffmerge
 [merge]
@@ -36,3 +67,11 @@
     keepBackup = false
 [difftool]
     prompt = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[core]
+	autocrlf = input
+	excludesfile = /Users/username/.gitignore_global
