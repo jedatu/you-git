@@ -51,7 +51,8 @@
 	tool = diffmerge
 [merge]
 	tool = diffmerge
-    keepBackup = false
+	keepBackup = false
+	ff = false
 [difftool "diffmerge"]
 	cmd = E:/Applications/DiffMerge/DiffMerge.exe \"$LOCAL\" \"$REMOTE\"
 [mergetool "diffmerge"]
